@@ -20,3 +20,14 @@ Route::get('/user/ubah/{id}', [UserController::class, 'ubah']);
 Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan']);
 Route::delete('/user/hapus/{id}', [UserController::class, 'hapus']);
 Route::get('/', [WelcomeController::class, 'index']);
+
+Route::group(['prefix' => 'user'], function() {
+    Route::get('/', [UserController::class, 'index']); // Menampilkan halaman awal user
+    Route::post('/list', [UserController::class, 'list']); // Menampilkan data untuk json untuk datatables
+    Route::get('/create', [UserController::class, 'create']); // Menampilkan form tambah user
+    Route::post('/', [UserController::class, 'store']); // Menyimpan data user baru
+    Route::get('{id}', [UserController::class, 'show']); // Menampilkan detail user
+    Route::get('{id}/edit', [UserController::class, 'edit']); // Menampilkan halaman form edit user
+    Route::put('{id}', [UserController::class, 'update']); // Mengupdate data user
+    Route::delete('{id}', [UserController::class, 'destroy']); // Menghapus data user
+});
