@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group row">
-                        <label class="ccol-1 control-label col-form-label">Filter:</label>
+                        <label class="col-1 control-label col-form-label">Filter:</label>
                         <div class="col-3">
                             <select name="level_id" id="level_id" class="form-control" required>
                                 <option value="">- Semua -</option>
