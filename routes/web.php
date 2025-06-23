@@ -29,13 +29,13 @@ Route::group(['prefix' => 'user'], function () {
     // Ajax
     Route::get('/create_ajax', [UserController::class, 'create_ajax']);
     Route::post('/ajax', [UserController::class, 'store_ajax']);
+
     Route::get('/{id}', [UserController::class, 'show']);
     Route::get('/{id}/edit', [UserController::class, 'edit']);
     Route::put('/{id}', [UserController::class, 'update']);
     // Ajax Update
     Route::get('/{id}/edit_ajax', [UserController::class, 'edit_ajax']);
     Route::put('/{id}/update_ajax', [UserController::class, 'update_ajax']);
-
     // Ajax Delete
     Route::get('/{id}/delete_ajax', [UserController::class, 'confirm_ajax']);
     Route::delete('/{id}/delete_ajax', [UserController::class, 'delete_ajax']);
@@ -58,9 +58,20 @@ Route::group(['prefix' => 'kategori'], function () {
     Route::post('/list', [KategoriController::class, 'list']);
     Route::get('/create', [KategoriController::class, 'create']);
     Route::post('/', [KategoriController::class, 'store']);
+    // Ajax
+    Route::get('/create_ajax', [KategoriController::class, 'create_ajax']);
+    Route::post('/ajax', [KategoriController::class, 'store_ajax']);
+
     Route::get('/{id}', [KategoriController::class, 'show']);
     Route::get('/{id}/edit', [KategoriController::class, 'edit']);
     Route::put('/{id}', [KategoriController::class, 'update']);
+    // Ajax Edit
+    Route::get('/{id}/edit_ajax', [KategoriController::class, 'edit_ajax']);
+    Route::put('/{id}/update_ajax', [KategoriController::class, 'update_ajax']);
+
+    // Ajax Delete
+    Route::get('/{id}/delete_ajax', [KategoriController::class, 'confirm_ajax']);
+    Route::delete('/{id}/delete_ajax', [KategoriController::class, 'delete_ajax']);
     Route::delete('/{id}', [KategoriController::class, 'destroy']);
 });
 
